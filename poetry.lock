@@ -1,13 +1,5 @@
 [[package]]
 category = "main"
-description = ""
-name = "aeval"
-optional = false
-python-versions = ">=3.8,<4.0"
-version = "0.1.2"
-
-[[package]]
-category = "main"
 description = "Async generators and context managers for Python 3.5+"
 name = "async-generator"
 optional = false
@@ -213,15 +205,11 @@ python-versions = "*"
 version = "0.2.5"
 
 [metadata]
-content-hash = "2a3675dd37da0d90438135a807d6f93cde83fe03238811c8724513b8d5d2c861"
+content-hash = "ae502d4b65813778a073108b0131716dea07c9a751c9a64e9b72486397cc69e5"
 lock-version = "1.0"
 python-versions = "^3.8"
 
 [metadata.files]
-aeval = [
-    {file = "aeval-0.1.2-py3-none-any.whl", hash = "sha256:b7e3876820b0ecab6d21f094ef07184f9254c17ab1c3e22e3f2715810fd3f68b"},
-    {file = "aeval-0.1.2.tar.gz", hash = "sha256:cf65fcb64ade5acf3c0914084e77ccb886b9e448b00bcf1da275619095b522cb"},
-]
 async-generator = [
     {file = "async_generator-1.10-py3-none-any.whl", hash = "sha256:01c7bf666359b4967d2cda0000cc2e4af16a0ae098cbffcb8472fb9e8ad6585b"},
     {file = "async_generator-1.10.tar.gz", hash = "sha256:6ebb3d106c12920aaae42ccb6f787ef5eefdcdd166ea3d628fa8476abe712144"},
