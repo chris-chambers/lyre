@@ -47,7 +47,7 @@ def main():
 async def run(host=None, port=6768, portfile='./.lyre-port'):
     listeners = await trio.open_tcp_listeners(port, host=host)
     if portfile:
-        with open(portfile, 'x') as f:
+        with open(portfile, 'w') as f:
             for listener in listeners:
                 host, port, *_ = listener.socket.getsockname()
                 f.write(f'{host} {port}\n')
