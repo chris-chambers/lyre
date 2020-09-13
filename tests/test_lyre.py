@@ -1,5 +1,8 @@
 from lyre import __version__
+from pathlib import Path
+import toml
 
 
 def test_version():
-    assert __version__ == '0.0.4'
+    project = toml.load(Path(__file__).parent.parent.joinpath('pyproject.toml'))
+    assert __version__ == project['tool']['poetry']['version']

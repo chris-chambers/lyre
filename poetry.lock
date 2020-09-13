@@ -180,6 +180,14 @@ python-versions = "*"
 version = "2.2.2"
 
 [[package]]
+category = "dev"
+description = "Python Library for Tom's Obvious, Minimal Language"
+name = "toml"
+optional = false
+python-versions = "*"
+version = "0.10.1"
+
+[[package]]
 category = "main"
 description = "A friendly Python library for async concurrency and I/O"
 name = "trio"
@@ -205,7 +213,7 @@ python-versions = "*"
 version = "0.2.5"
 
 [metadata]
-content-hash = "ae502d4b65813778a073108b0131716dea07c9a751c9a64e9b72486397cc69e5"
+content-hash = "b867a446aa29dc9563ea3709cb96ae4acb5e6016dc96517a3002c2a3b4b71c3e"
 lock-version = "1.0"
 python-versions = "^3.8"
 
@@ -306,6 +314,10 @@ sniffio = [
 sortedcontainers = [
     {file = "sortedcontainers-2.2.2-py2.py3-none-any.whl", hash = "sha256:c633ebde8580f241f274c1f8994a665c0e54a17724fecd0cae2f079e09c36d3f"},
     {file = "sortedcontainers-2.2.2.tar.gz", hash = "sha256:4e73a757831fc3ca4de2859c422564239a31d8213d09a2a666e375807034d2ba"},
+]
+toml = [
+    {file = "toml-0.10.1-py2.py3-none-any.whl", hash = "sha256:bda89d5935c2eac546d648028b9901107a595863cb36bae0c73ac804a9b4ce88"},
+    {file = "toml-0.10.1.tar.gz", hash = "sha256:926b612be1e5ce0634a2ca03470f95169cf16f939018233a670519cb4ac58b0f"},
 ]
 trio = [
     {file = "trio-0.16.0-py3-none-any.whl", hash = "sha256:451ddb27b4e5215e00646fcbb8028d341fccf284e053dc376506a14bb133dbcf"},
