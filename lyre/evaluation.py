@@ -11,9 +11,15 @@ def capture_last_expression(mod: ast.Module, target: str):
         ast.fix_missing_locations(mod)
 
 
-async def aexec(code, filename, globals=..., locals=...):
-    code_object = compile(code, filename, 'exec', ast.PyCF_ALLOW_TOP_LEVEL_AWAIT)
-    if code_object.co_flags & inspect.CO_COROUTINE:
-        await eval(code_object, globals, locals)
-    else:
-        exec(code_object, globals, locals)
+if hasattr(ast, 'PyCF_ALLOW_TOP_LEVEL_AWAIT'):
+    async def aexec(code, filename, globals=..., locals=...):
+        code_object = compile(code, filename, 'exec', ast.PyCF_ALLOW_TOP_LEVEL_AWAIT)
+        if code_object.co_flags & inspect.CO_COROUTINE:
+            await eval(code_object, globals, locals)
+        else:
+            exec(code_object, globals, locals)
+else:
+    import aeval
+    async def aexec(code, filename, globals=..., locals=...):
+        # TODO: Use filename.
+        await aeval.aeval(code, globals, locals)
