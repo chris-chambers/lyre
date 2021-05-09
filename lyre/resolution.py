@@ -1,6 +1,8 @@
+import itertools
 from logging import getLogger
 from pathlib import Path
 import sys
+from typing import Iterable
 
 
 _log = getLogger(__name__)
@@ -21,12 +23,12 @@ class ModuleResolveError(ImportError):
         return f'could not resolve module name for path: {self.path}'
 
 
-def module_name_from_filename(path: Path):
+def module_name_from_filename(path: Path, extra_import_paths: Iterable[Path]):
     if path.name == '__init__.py':
         path = path.parent
 
     modnames = []
-    for import_path in candidate_import_paths(path):
+    for import_path in itertools.chain(candidate_import_paths(path), extra_import_paths):
         _log.debug(f'import path: {import_path}')
         try:
             relpath = path.relative_to(import_path)
